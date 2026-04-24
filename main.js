@@ -34,9 +34,11 @@ async function init() {
     
     setupEventListeners();
     
-    // Initial slots
-    for (let i = 0; i < 5; i++) {
-      addSlot();
+    // Initial slots (load from URL or default to 5)
+    if (!loadFromURL()) {
+      for (let i = 0; i < 5; i++) {
+        addSlot();
+      }
     }
   } catch (error) {
     console.error('Failed to initialize:', error);
@@ -216,6 +218,7 @@ function applySynergy(syn) {
   if (unlocked.length > 0) {
     randomize();
   }
+  updateURL();
 }
 
 function createSlotElement() {
@@ -296,6 +299,7 @@ function addSlot() {
   container.insertBefore(slotEl, addCard);
   slots.push(slot);
   updateAddButtonState();
+  updateURL();
 }
 
 function removeSlot(slot) {
@@ -306,6 +310,7 @@ function removeSlot(slot) {
     container.removeChild(slot.el);
     slots = slots.filter(s => s.id !== slot.id);
     updateAddButtonState();
+    updateURL();
   }, 300);
 }
 
@@ -317,6 +322,7 @@ function toggleLock(slot) {
   slot.locked = !slot.locked;
   slot.el.classList.toggle('locked', slot.locked);
   slot.el.querySelector('.lock-status').textContent = slot.locked ? 'LOCKED' : 'UNLOCKED';
+  updateURL();
 }
 
 async function randomize() {
@@ -402,6 +408,7 @@ async function randomize() {
         lockedNames.push(finalName);
       }
     });
+    updateURL();
   } catch (err) {
     console.error('Randomization failed:', err);
   } finally {
@@ -445,6 +452,68 @@ function resetAll() {
     s.el.querySelector('.lock-status').textContent = 'UNLOCKED';
     updateSlotUI(s, 'EMPTY');
   });
+  updateURL();
+}
+
+function updateURL() {
+  const url = new URL(window.location);
+  
+  // Clear old slot params
+  for (let i = 0; i < 10; i++) {
+    url.searchParams.delete(`slot${i}`);
+    url.searchParams.delete(`lock${i}`);
+  }
+  
+  slots.forEach((s, index) => {
+    url.searchParams.set(`slot${index}`, s.name);
+    url.searchParams.set(`lock${index}`, s.locked ? 'true' : 'false');
+  });
+  
+  window.history.replaceState({}, '', url);
+}
+
+function loadFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  
+  // Check if any slot param exists
+  if (!params.has('slot0')) return false;
+  
+  // Clear initial slots
+  while (slots.length > 0) {
+    const s = slots[0];
+    container.removeChild(s.el);
+    slots.shift();
+  }
+
+  for (let i = 0; i < 5; i++) {
+    const name = params.get(`slot${i}`);
+    const locked = params.get(`lock${i}`) === 'true';
+    
+    if (name) {
+      const id = Date.now() + Math.random();
+      const slotEl = createSlotElement();
+      const slot = {
+        id: id,
+        el: slotEl,
+        name: name,
+        locked: locked
+      };
+      
+      setupSlotEvents(slot);
+      updateSlotUI(slot, name);
+      
+      if (locked) {
+        slotEl.classList.add('locked');
+        slotEl.querySelector('.lock-status').textContent = 'LOCKED';
+      }
+      
+      container.insertBefore(slotEl, addCard);
+      slots.push(slot);
+    }
+  }
+
+  updateAddButtonState();
+  return true;
 }
 
 init();
