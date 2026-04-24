@@ -1,176 +1,1218 @@
 {
   "champions": [
-    "Aatrox",
-    "Ahri",
-    "Akali",
-    "Akshan",
-    "Alistar",
-    "Amumu",
-    "Anivia",
-    "Annie",
-    "Aphelios",
-    "Ashe",
-    "Aurelion Sol",
-    "Azir",
-    "Bard",
-    "Bel'Veth",
-    "Blitzcrank",
-    "Brand",
-    "Braum",
-    "Briar",
-    "Caitlyn",
-    "Camille",
-    "Cassiopeia",
-    "Cho'Gath",
-    "Corki",
-    "Darius",
-    "Diana",
-    "Dr. Mundo",
-    "Draven",
-    "Ekko",
-    "Elise",
-    "Evelynn",
-    "Ezreal",
-    "Fiddlesticks",
-    "Fiora",
-    "Fizz",
-    "Galio",
-    "Gangplank",
-    "Garen",
-    "Gnar",
-    "Gragas",
-    "Graves",
-    "Gwen",
-    "Hecarim",
-    "Heimerdinger",
-    "Hwei",
-    "Illaoi",
-    "Irelia",
-    "Ivern",
-    "Janna",
-    "Jarvan IV",
-    "Jax",
-    "Jayce",
-    "Jhin",
-    "Jinx",
-    "K'Sante",
-    "Kai'Sa",
-    "Kalista",
-    "Karma",
-    "Karthus",
-    "Kassadin",
-    "Katarina",
-    "Kayle",
-    "Kayn",
-    "Kennen",
-    "Kha'Zix",
-    "Kindred",
-    "Kled",
-    "Kog'Maw",
-    "LeBlanc",
-    "Lee Sin",
-    "Leona",
-    "Lillia",
-    "Lissandra",
-    "Lucian",
-    "Lulu",
-    "Lux",
-    "Malphite",
-    "Malzahar",
-    "Maokai",
-    "Master Yi",
-    "Milio",
-    "Miss Fortune",
-    "Mordekaiser",
-    "Morgana",
-    "Naafiri",
-    "Nami",
-    "Nasus",
-    "Nautilus",
-    "Neeko",
-    "Nidalee",
-    "Nilah",
-    "Nocturne",
-    "Nunu & Willump",
-    "Olaf",
-    "Orianna",
-    "Ornn",
-    "Pantheon",
-    "Poppy",
-    "Pyke",
-    "Qiyana",
-    "Quinn",
-    "Rakan",
-    "Rammus",
-    "Rek'Sai",
-    "Rell",
-    "Renata Glasc",
-    "Renekton",
-    "Rengar",
-    "Riven",
-    "Rumble",
-    "Ryze",
-    "Samira",
-    "Sejuani",
-    "Senna",
-    "Seraphine",
-    "Sett",
-    "Shaco",
-    "Shen",
-    "Shyvana",
-    "Singed",
-    "Sion",
-    "Sivir",
-    "Skarner",
-    "Sona",
-    "Soraka",
-    "Swain",
-    "Sylas",
-    "Syndra",
-    "Tahm Kench",
-    "Taliyah",
-    "Talon",
-    "Taric",
-    "Teemo",
-    "Thresh",
-    "Tristana",
-    "Trundle",
-    "Tryndamere",
-    "Twisted Fate",
-    "Twitch",
-    "Udyr",
-    "Urgot",
-    "Varus",
-    "Vayne",
-    "Veigar",
-    "Vel'Koz",
-    "Vex",
-    "Vi",
-    "Viego",
-    "Viktor",
-    "Vladimir",
-    "Volibear",
-    "Warwick",
-    "Wukong",
-    "Xayah",
-    "Xerath",
-    "Xin Zhao",
-    "Yasuo",
-    "Yone",
-    "Yorick",
-    "Yuumi",
-    "Zac",
-    "Zed",
-    "Zeri",
-    "Ziggs",
-    "Zilean",
-    "Zoe",
-    "Zyra",
-    "Smolder",
-    "Aurora",
-    "Ambessa",
-    "Mel Medarda",
-    "Yunara",
-    "Zaahen"
+    {
+      "name": "Aatrox",
+      "tags": [
+        "Top",
+        "Heal"
+      ]
+    },
+    {
+      "name": "Ahri",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Akali",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Akshan",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Alistar",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Amumu",
+      "tags": [
+        "Jungle",
+        "Tank",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Anivia",
+      "tags": [
+        "Mid",
+        "Slow",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Annie",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Aphelios",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Ashe",
+      "tags": [
+        "ADC",
+        "Slow",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Aurelion Sol",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Azir",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Bard",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Bel'Veth",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Blitzcrank",
+      "tags": [
+        "Sup",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Brand",
+      "tags": [
+        "Sup",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Braum",
+      "tags": [
+        "Sup",
+        "Slow",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Briar",
+      "tags": [
+        "Jungle",
+        "Heal"
+      ]
+    },
+    {
+      "name": "Caitlyn",
+      "tags": [
+        "ADC",
+        "Root"
+      ]
+    },
+    {
+      "name": "Camille",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Cassiopeia",
+      "tags": [
+        "Mid",
+        "Slow",
+        "Poison"
+      ]
+    },
+    {
+      "name": "Cho'Gath",
+      "tags": [
+        "Top",
+        "Slow",
+        "Tank",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Corki",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Darius",
+      "tags": [
+        "Top",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Diana",
+      "tags": [
+        "Jungle",
+        "Mid"
+      ]
+    },
+    {
+      "name": "Dr. Mundo",
+      "tags": [
+        "Top",
+        "Heal",
+        "Slow",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Draven",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Ekko",
+      "tags": [
+        "Jungle",
+        "Mid",
+        "Slow",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Elise",
+      "tags": [
+        "Jungle",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Evelynn",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Ezreal",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Fiddlesticks",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Fiora",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Fizz",
+      "tags": [
+        "Mid",
+        "Short"
+      ]
+    },
+    {
+      "name": "Galio",
+      "tags": [
+        "Mid",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Gangplank",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Garen",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Gnar",
+      "tags": [
+        "Top",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Gragas",
+      "tags": [
+        "Jungle",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Graves",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Gwen",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Hecarim",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Heimerdinger",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Hwei",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Illaoi",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Irelia",
+      "tags": [
+        "Top",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Ivern",
+      "tags": [
+        "Jungle",
+        "Heal",
+        "Root"
+      ]
+    },
+    {
+      "name": "Janna",
+      "tags": [
+        "Sup",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Jarvan IV",
+      "tags": [
+        "Jungle",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Jax",
+      "tags": [
+        "Top",
+        "Jungle",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Jayce",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Jhin",
+      "tags": [
+        "ADC",
+        "Slow",
+        "Root"
+      ]
+    },
+    {
+      "name": "Jinx",
+      "tags": [
+        "ADC",
+        "Slow",
+        "Root"
+      ]
+    },
+    {
+      "name": "K'Sante",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Kai'Sa",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Kalista",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Karma",
+      "tags": [
+        "Sup",
+        "Root"
+      ]
+    },
+    {
+      "name": "Karthus",
+      "tags": [
+        "Jungle",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Kassadin",
+      "tags": [
+        "Mid",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Katarina",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Kayle",
+      "tags": [
+        "Top",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Kayn",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Kennen",
+      "tags": [
+        "Short",
+        "Mid"
+      ]
+    },
+    {
+      "name": "Kha'Zix",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Kindred",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Kled",
+      "tags": [
+        "Top",
+        "Short"
+      ]
+    },
+    {
+      "name": "Kog'Maw",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "LeBlanc",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Lee Sin",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Leona",
+      "tags": [
+        "Sup",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Lillia",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Lissandra",
+      "tags": [
+        "Mid",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Lucian",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Lulu",
+      "tags": [
+        "Sup",
+        "Slow",
+        "Root",
+        "Short"
+      ]
+    },
+    {
+      "name": "Lux",
+      "tags": [
+        "Mid",
+        "Sup",
+        "Stun",
+        "Root"
+      ]
+    },
+    {
+      "name": "Malphite",
+      "tags": [
+        "Top",
+        "Slow",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Malzahar",
+      "tags": [
+        "Mid",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Maokai",
+      "tags": [
+        "Top",
+        "Tank",
+        "Root"
+      ]
+    },
+    {
+      "name": "Master Yi",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Milio",
+      "tags": [
+        "Sup",
+        "Heal"
+      ]
+    },
+    {
+      "name": "Miss Fortune",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Mordekaiser",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Morgana",
+      "tags": [
+        "Sup",
+        "Stun",
+        "Root"
+      ]
+    },
+    {
+      "name": "Naafiri",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Nami",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Nasus",
+      "tags": [
+        "Top",
+        "Slow",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Nautilus",
+      "tags": [
+        "Sup",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Neeko",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Root"
+      ]
+    },
+    {
+      "name": "Nidalee",
+      "tags": [
+        "Jungle",
+        "Heal",
+        "Root"
+      ]
+    },
+    {
+      "name": "Nilah",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Nocturne",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Nunu & Willump",
+      "tags": [
+        "Jungle",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Olaf",
+      "tags": [
+        "Top",
+        "Jungle",
+        "Heal",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Orianna",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Ornn",
+      "tags": [
+        "Top",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Pantheon",
+      "tags": [
+        "Mid",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Poppy",
+      "tags": [
+        "Top",
+        "Tank",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Pyke",
+      "tags": [
+        "Sup",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Qiyana",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Quinn",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Rakan",
+      "tags": [
+        "Sup",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Rammus",
+      "tags": [
+        "Jungle",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Rek'Sai",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Rell",
+      "tags": [
+        "Sup",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Renata Glasc",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Root"
+      ]
+    },
+    {
+      "name": "Renekton",
+      "tags": [
+        "Top",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Rengar",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Riven",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Rumble",
+      "tags": [
+        "Top",
+        "Short"
+      ]
+    },
+    {
+      "name": "Ryze",
+      "tags": [
+        "Mid",
+        "Root"
+      ]
+    },
+    {
+      "name": "Samira",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Sejuani",
+      "tags": [
+        "Jungle",
+        "Slow",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Senna",
+      "tags": [
+        "ADC",
+        "Sup",
+        "Heal",
+        "Root",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Seraphine",
+      "tags": [
+        "Sup",
+        "Root"
+      ]
+    },
+    {
+      "name": "Sett",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Shaco",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Shen",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Shyvana",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Singed",
+      "tags": [
+        "Top",
+        "Slow",
+        "Poison"
+      ]
+    },
+    {
+      "name": "Sion",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Sivir",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Skarner",
+      "tags": [
+        "Jungle",
+        "Slow",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Sona",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Soraka",
+      "tags": [
+        "Sup",
+        "Heal"
+      ]
+    },
+    {
+      "name": "Swain",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Root"
+      ]
+    },
+    {
+      "name": "Sylas",
+      "tags": [
+        "Mid",
+        "Heal",
+        "Root"
+      ]
+    },
+    {
+      "name": "Syndra",
+      "tags": [
+        "Mid",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Tahm Kench",
+      "tags": [
+        "Top",
+        "Tank"
+      ]
+    },
+    {
+      "name": "Taliyah",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Talon",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Taric",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Teemo",
+      "tags": [
+        "Top",
+        "Poison",
+        "Short"
+      ]
+    },
+    {
+      "name": "Thresh",
+      "tags": [
+        "Sup",
+        "Slow",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Tristana",
+      "tags": [
+        "ADC",
+        "Short"
+      ]
+    },
+    {
+      "name": "Trundle",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Tryndamere",
+      "tags": [
+        "Top",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Twisted Fate",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Twitch",
+      "tags": [
+        "ADC",
+        "Slow",
+        "Poison"
+      ]
+    },
+    {
+      "name": "Udyr",
+      "tags": [
+        "Jungle",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Urgot",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Varus",
+      "tags": [
+        "ADC",
+        "Stun",
+        "Root"
+      ]
+    },
+    {
+      "name": "Vayne",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Veigar",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Short",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Vel'Koz",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Vex",
+      "tags": [
+        "Mid",
+        "Stun",
+        "Short"
+      ]
+    },
+    {
+      "name": "Vi",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Viego",
+      "tags": [
+        "Jungle"
+      ]
+    },
+    {
+      "name": "Viktor",
+      "tags": [
+        "Mid",
+        "Slow",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Vladimir",
+      "tags": [
+        "Mid",
+        "Heal",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Volibear",
+      "tags": [
+        "Top",
+        "Jungle",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Warwick",
+      "tags": [
+        "Jungle",
+        "Heal",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Wukong",
+      "tags": [
+        "Top",
+        "Jungle",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Xayah",
+      "tags": [
+        "ADC",
+        "Root"
+      ]
+    },
+    {
+      "name": "Xerath",
+      "tags": [
+        "Stun",
+        "Mid"
+      ]
+    },
+    {
+      "name": "Xin Zhao",
+      "tags": [
+        "Jungle",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Yasuo",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Yone",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Yorick",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Yuumi",
+      "tags": [
+        "Sup",
+        "Heal",
+        "Short"
+      ]
+    },
+    {
+      "name": "Zac",
+      "tags": [
+        "Jungle",
+        "Slow",
+        "Tank",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Zed",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Zeri",
+      "tags": [
+        "ADC"
+      ]
+    },
+    {
+      "name": "Ziggs",
+      "tags": [
+        "Mid",
+        "Slow",
+        "Short"
+      ]
+    },
+    {
+      "name": "Zilean",
+      "tags": [
+        "Sup",
+        "Slow"
+      ]
+    },
+    {
+      "name": "Zoe",
+      "tags": [
+        "Mid",
+        "Stun"
+      ]
+    },
+    {
+      "name": "Zyra",
+      "tags": [
+        "Sup",
+        "Stun",
+        "Root"
+      ]
+    },
+    {
+      "name": "Smolder",
+      "tags": [
+        "ADC",
+        "Short",
+        "Scaling"
+      ]
+    },
+    {
+      "name": "Aurora",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Ambessa",
+      "tags": [
+        "Top"
+      ]
+    },
+    {
+      "name": "Mel Medarda",
+      "tags": [
+        "Sup"
+      ]
+    },
+    {
+      "name": "Yunara",
+      "tags": [
+        "Mid"
+      ]
+    },
+    {
+      "name": "Zaahen",
+      "tags": [
+        "Mid"
+      ]
+    }
   ]
 }

@@ -176,6 +176,41 @@ main {
   white-space: nowrap;
 }
 
+.tag-selectors {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.tag-select {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 0.65rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-select:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-main);
+}
+
+.tag-select option {
+  background: var(--bg-color);
+  color: var(--text-main);
+}
+
 /* Add Card Slot */
 .champion-slot.add-card .card-inner {
   border-style: dashed;
