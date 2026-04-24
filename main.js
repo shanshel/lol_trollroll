@@ -39,16 +39,232 @@ async function init() {
   }
 }
 
+const synergies = {
+  preset: [
+    {
+      name: "Yassuo and His Brother",
+      description: "Yasuo and Yone locked. Others filtered for Yasuo's Mate.",
+      icon: "Yasuo",
+      slots: [
+        { type: 'fixed', name: 'Yasuo', locked: true },
+        { type: 'fixed', name: 'Yone', locked: true },
+        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false },
+        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false },
+        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false }
+      ]
+    },
+    {
+      name: "The Hook City (Partial)",
+      description: "Thresh and Blitzcrank locked. Others filtered for Hooks.",
+      icon: "Thresh",
+      slots: [
+        { type: 'fixed', name: 'Thresh', locked: true },
+        { type: 'fixed', name: 'Blitzcrank', locked: true },
+        { type: 'random', role: 'All', feature: 'Hook', locked: false },
+        { type: 'random', role: 'All', feature: 'Hook', locked: false },
+        { type: 'random', role: 'All', feature: 'Hook', locked: false }
+      ]
+    },
+    {
+      name: "Invisible Threat",
+      description: "Evelynn and Twitch locked. Others filtered for Invisible.",
+      icon: "Evelynn",
+      slots: [
+        { type: 'fixed', name: 'Evelynn', locked: true },
+        { type: 'fixed', name: 'Twitch', locked: true },
+        { type: 'random', role: 'All', feature: 'Invisible', locked: false },
+        { type: 'random', role: 'All', feature: 'Invisible', locked: false },
+        { type: 'random', role: 'All', feature: 'Invisible', locked: false }
+      ]
+    }
+  ],
+  static: [
+    {
+      name: "The Hook Squad",
+      description: "Thresh, Blitz, Nautilus, Pyke, Leona.",
+      slots: [
+        { type: 'fixed', name: 'Thresh', locked: true },
+        { type: 'fixed', name: 'Blitzcrank', locked: true },
+        { type: 'fixed', name: 'Nautilus', locked: true },
+        { type: 'fixed', name: 'Pyke', locked: true },
+        { type: 'fixed', name: 'Leona', locked: true }
+      ]
+    },
+    {
+      name: "Global Presence",
+      description: "Shen, Galio, Twisted Fate, Nocturne, Pantheon.",
+      slots: [
+        { type: 'fixed', name: 'Shen', locked: true },
+        { type: 'fixed', name: 'Galio', locked: true },
+        { type: 'fixed', name: 'Twisted Fate', locked: true },
+        { type: 'fixed', name: 'Nocturne', locked: true },
+        { type: 'fixed', name: 'Pantheon', locked: true }
+      ]
+    }
+  ]
+};
+
 function setupEventListeners() {
   document.getElementById('randomize-btn').addEventListener('click', randomize);
   document.getElementById('reset-btn').addEventListener('click', resetAll);
   addCard.addEventListener('click', addSlot);
+  
+  // Synergy Sidebar
+  const toggleBtn = document.getElementById('toggle-sidebar-btn');
+  const closeBtn = document.getElementById('close-sidebar-btn');
+  const sidebar = document.getElementById('synergy-sidebar');
+  
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('closed');
+  });
+  
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.add('closed');
+  });
+
+  // Sidebar Tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabName = btn.getAttribute('data-tab');
+      
+      // Update buttons
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Update content
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById(`${tabName}-tab`).classList.add('active');
+    });
+  });
+
+  // Initial render
+  renderSynergies();
 }
 
-function addSlot() {
-  if (slots.length >= 5) return;
+function renderSynergies() {
+  const presetList = document.getElementById('preset-random-list');
+  const staticList = document.getElementById('static-builds-list');
   
-  const id = Date.now();
+  if (!presetList || !staticList) return;
+  
+  presetList.innerHTML = '';
+  staticList.innerHTML = '';
+  
+  synergies.preset.forEach(syn => {
+    const item = createSynergyItem(syn, 'preset');
+    presetList.appendChild(item);
+  });
+  
+  synergies.static.forEach(syn => {
+    const item = createSynergyItem(syn, 'static');
+    staticList.appendChild(item);
+  });
+}
+
+function createSynergyItem(syn, type) {
+  const div = document.createElement('div');
+  div.className = `synergy-item ${type}-item`;
+  
+  let iconsHtml = '';
+  if (type === 'preset') {
+    const champId = championIdMap[syn.icon];
+    iconsHtml = `
+      <div class="syn-icon-main">
+        <img src="https://ddragon.leagueoflegends.com/cdn/${ddragonVersion}/img/champion/${champId}.png" alt="${syn.icon}">
+      </div>
+    `;
+    div.innerHTML = `
+      ${iconsHtml}
+      <div class="syn-info">
+        <h4>${syn.name}</h4>
+        <p>${syn.description}</p>
+      </div>
+    `;
+  } else {
+    iconsHtml = `<div class="syn-icons-stack">`;
+    syn.slots.forEach(slot => {
+      const champId = championIdMap[slot.name];
+      if (champId) {
+        iconsHtml += `<img src="https://ddragon.leagueoflegends.com/cdn/${ddragonVersion}/img/champion/${champId}.png" class="syn-stack-icon" alt="${slot.name}">`;
+      }
+    });
+    iconsHtml += `</div>`;
+    
+    div.innerHTML = `
+      <div class="syn-info">
+        <h4>${syn.name}</h4>
+        <p>${syn.description}</p>
+      </div>
+      ${iconsHtml}
+    `;
+  }
+  
+  div.addEventListener('click', () => {
+    applySynergy(syn);
+    if (window.innerWidth <= 1024) {
+      const sidebar = document.getElementById('synergy-sidebar');
+      if (sidebar) sidebar.classList.add('closed');
+    }
+  });
+  return div;
+}
+
+function applySynergy(syn) {
+  // Clear all current slots
+  while (slots.length > 0) {
+    const s = slots[0];
+    container.removeChild(s.el);
+    slots.shift();
+  }
+  
+  // Create new slots based on synergy
+  syn.slots.forEach(slotData => {
+    const id = Date.now() + Math.random();
+    const slotEl = createSlotElement();
+    
+    const slot = {
+      id: id,
+      el: slotEl,
+      name: slotData.type === 'fixed' ? slotData.name : 'EMPTY',
+      locked: slotData.locked
+    };
+    
+    // Set initial UI
+    if (slotData.type === 'fixed') {
+      updateSlotUI(slot, slotData.name);
+    } else {
+      updateSlotUI(slot, 'EMPTY');
+    }
+    
+    if (slot.locked) {
+      slotEl.classList.add('locked');
+      slotEl.querySelector('.lock-status').textContent = 'LOCKED';
+    }
+    
+    // Set filters
+    if (slotData.type === 'random') {
+      slotEl.querySelector('.role-select').value = slotData.role || 'All';
+      slotEl.querySelector('.feature-select').value = slotData.feature || 'All';
+    }
+
+    setupSlotEvents(slot);
+    container.insertBefore(slotEl, addCard);
+    slots.push(slot);
+  });
+  
+  updateAddButtonState();
+  
+  // If there are unlocked slots, maybe auto-randomize?
+  const unlocked = slots.filter(s => !s.locked);
+  if (unlocked.length > 0) {
+    randomize();
+  }
+}
+
+function createSlotElement() {
   const slotEl = document.createElement('div');
   slotEl.className = 'champion-slot';
   slotEl.setAttribute('data-empty', 'true');
@@ -94,6 +310,25 @@ function addSlot() {
         </div>
     </div>
   `;
+  return slotEl;
+}
+
+function setupSlotEvents(slot) {
+  slot.el.querySelector('.card-inner').addEventListener('click', (e) => {
+    if (e.target.classList.contains('tag-select')) return;
+    toggleLock(slot);
+  });
+  slot.el.querySelector('.remove-slot').addEventListener('click', (e) => {
+    e.stopPropagation();
+    removeSlot(slot);
+  });
+}
+
+function addSlot() {
+  if (slots.length >= 5) return;
+  
+  const id = Date.now();
+  const slotEl = createSlotElement();
   
   const slot = {
     id: id,
@@ -102,14 +337,7 @@ function addSlot() {
     locked: false
   };
   
-  slotEl.querySelector('.card-inner').addEventListener('click', (e) => {
-    if (e.target.classList.contains('tag-select')) return;
-    toggleLock(slot);
-  });
-  slotEl.querySelector('.remove-slot').addEventListener('click', (e) => {
-    e.stopPropagation();
-    removeSlot(slot);
-  });
+  setupSlotEvents(slot);
   
   container.insertBefore(slotEl, addCard);
   slots.push(slot);

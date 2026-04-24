@@ -14,33 +14,71 @@
 </head>
 
 <body>
-    <div id="app">
-        <header>
-            <h1>TROLL <span class="accent">ROLL</span></h1>
-        </header>
+    <div id="app" class="layout-sidebar">
+        <div class="content-area">
+            <header>
+                <div class="header-left">
+                    <h1>TROLL <span class="accent">ROLL</span></h1>
+                </div>
+                <div class="header-right">
+                    <button id="toggle-sidebar-btn" class="icon-btn" title="Toggle Synergies">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span>SYNERGIES</span>
+                    </button>
+                </div>
+            </header>
 
-        <main>
-            <div id="slots-container" class="slots-grid">
-                <!-- Slots will be dynamically injected here -->
-                <div id="add-card" class="champion-slot add-card">
-                    <div class="card-inner">
-                        <div class="icon-placeholder">+</div>
-                        <div class="name">ADD SLOT</div>
+            <main>
+                <div id="slots-container" class="slots-grid">
+                    <!-- Slots will be dynamically injected here -->
+                    <div id="add-card" class="champion-slot add-card">
+                        <div class="card-inner">
+                            <div class="icon-placeholder">+</div>
+                            <div class="name">ADD SLOT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="randomize-btn" class="primary-btn">
+                        <span class="btn-text">RANDOMIZE UNLOCKED</span>
+                    </button>
+                    <button id="reset-btn" class="secondary-btn">RESET ALL</button>
+                </div>
+            </main>
+
+            <footer>
+                <p>Add up to 5 slots. Click a champion to LOCK it. Hover over a slot to REMOVE it.</p>
+            </footer>
+        </div>
+
+        <!-- Synergy Sidebar -->
+        <aside id="synergy-sidebar" class="sidebar">
+            <header class="sidebar-header">
+                <h2>SYNERGIES</h2>
+                <button id="close-sidebar-btn" class="close-btn mobile-only">×</button>
+            </header>
+            <div class="sidebar-content">
+                <div class="sidebar-tabs">
+                    <button class="tab-btn active" data-tab="preset">DYNAMIC</button>
+                    <button class="tab-btn" data-tab="static">STATIC</button>
+                </div>
+                
+                <div id="preset-tab" class="tab-content active">
+                    <div id="preset-random-list" class="synergy-list">
+                        <!-- Preset items will be injected here -->
+                    </div>
+                </div>
+                
+                <div id="static-tab" class="tab-content">
+                    <div id="static-builds-list" class="synergy-list">
+                        <!-- Static items will be injected here -->
                     </div>
                 </div>
             </div>
-
-            <div class="actions">
-                <button id="randomize-btn" class="primary-btn">
-                    <span class="btn-text">RANDOMIZE UNLOCKED</span>
-                </button>
-                <button id="reset-btn" class="secondary-btn">RESET ALL</button>
-            </div>
-        </main>
-
-        <footer>
-            <p>Add up to 5 slots. Click a champion to LOCK it. Hover over a slot to REMOVE it.</p>
-        </footer>
+        </aside>
     </div>
     <script type="module" src="./main.js"></script>
 </body>
