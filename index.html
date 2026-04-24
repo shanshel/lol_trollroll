@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Synergy Randomizer 2026</title>
+    <meta name="description"
+        content="A premium League of Legends champion randomizer. Add, remove, and lock slots to forge your perfect team.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>CHAMPION <span class="accent">RANDOMIZER</span></h1>
+        </header>
+
+        <main>
+            <div id="slots-container" class="slots-grid">
+                <!-- Slots will be dynamically injected here -->
+                <div id="add-card" class="champion-slot add-card">
+                    <div class="card-inner">
+                        <div class="icon-placeholder">+</div>
+                        <div class="name">ADD SLOT</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="randomize-btn" class="primary-btn">
+                    <span class="btn-text">RANDOMIZE UNLOCKED</span>
+                </button>
+                <button id="reset-btn" class="secondary-btn">RESET ALL</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Add up to 5 slots. Click a champion to LOCK it. Hover over a slot to REMOVE it.</p>
+        </footer>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
