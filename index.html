@@ -49,9 +49,42 @@
                 </div>
             </main>
 
-            <footer>
-                <p>Add up to 5 slots. Click a champion to LOCK it. Hover over a slot to REMOVE it.</p>
+            <footer class="main-footer">
+                <div class="footer-help">
+                    <p>Click to <strong>LOCK</strong> • Hover to <strong>REMOVE</strong> • Filter with <strong>TAGS</strong></p>
+                </div>
+                <div class="footer-actions">
+                    <button id="save-team-btn" class="toolbar-btn" title="Save to Custom">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        <span>SAVE TEAM</span>
+                    </button>
+                    <button id="share-team-btn" class="toolbar-btn" title="Copy Share Link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                            <polyline points="16 6 12 2 8 6"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                        <span>SHARE LINK</span>
+                    </button>
+                </div>
             </footer>
+        </div>
+
+        <!-- Custom Save Modal -->
+        <div id="save-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <h3>SAVE CUSTOM TEAM</h3>
+                <p>Enter a name for your masterpiece:</p>
+                <input type="text" id="team-name-input" placeholder="My Team Name...">
+                <div class="modal-actions">
+                    <button id="confirm-save-btn" class="modal-btn primary">SAVE</button>
+                    <button id="cancel-save-btn" class="modal-btn secondary">CANCEL</button>
+                </div>
+            </div>
         </div>
 
         <!-- Synergy Sidebar -->
@@ -64,6 +97,7 @@
                 <div class="sidebar-tabs">
                     <button class="tab-btn active" data-tab="preset">DYNAMIC</button>
                     <button class="tab-btn" data-tab="static">STATIC</button>
+                    <button class="tab-btn" data-tab="custom">CUSTOM</button>
                 </div>
                 
                 <div id="preset-tab" class="tab-content active">
@@ -75,6 +109,20 @@
                 <div id="static-tab" class="tab-content">
                     <div id="static-builds-list" class="synergy-list">
                         <!-- Static items will be injected here -->
+                    </div>
+                </div>
+                
+                <div id="custom-tab" class="tab-content">
+                    <div class="tab-disclaimer">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>Saved locally in your browser.</span>
+                    </div>
+                    <div id="custom-synergy-list" class="synergy-list">
+                        <p class="empty-msg">No custom teams saved yet.</p>
                     </div>
                 </div>
             </div>

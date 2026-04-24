@@ -515,7 +515,7 @@ header h1 {
   object-fit: cover;
 }
 
-.static-item {
+.static-item, .custom-item {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
@@ -597,6 +597,7 @@ header h1 {
   color: var(--accent-gold);
   opacity: 0;
   transition: var(--transition);
+  pointer-events: none;
 }
 
 .synergy-item:hover::after {
@@ -672,4 +673,292 @@ header h1 {
     opacity: 1;
     transform: scale(1);
   }
+}
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(10, 15, 25, 0.6);
+  border-top: 1px solid rgba(200, 170, 110, 0.1);
+  backdrop-filter: blur(20px);
+  margin-top: auto;
+}
+
+.footer-help p {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-help strong {
+  color: var(--accent-gold);
+  font-weight: 800;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolbar-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+}
+
+.toolbar-btn:hover {
+  color: var(--text-main);
+  background: rgba(200, 170, 110, 0.1);
+  border-color: rgba(200, 170, 110, 0.3);
+  transform: translateY(-2px);
+}
+
+.toolbar-btn svg {
+  color: var(--accent-gold);
+  transition: inherit;
+}
+
+.toolbar-btn:hover svg {
+  filter: drop-shadow(0 0 5px var(--accent-gold));
+}
+
+.toolbar-btn.copied {
+  color: #00ff80 !important;
+  background: rgba(0, 255, 128, 0.1) !important;
+  border-color: rgba(0, 255, 128, 0.3) !important;
+}
+
+.toolbar-btn.copied svg {
+  color: #00ff80 !important;
+}
+
+@media (max-width: 768px) {
+  .main-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .footer-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .toolbar-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.delete-custom-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 64, 64, 0.2);
+  border: 1px solid rgba(255, 64, 64, 0.4);
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100; /* Ensure it's above everything */
+  line-height: 1;
+}
+
+.delete-custom-btn:hover {
+  background: #ff4040;
+  border-color: #ff8080;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 64, 64, 0.5);
+}
+
+.delete-custom-btn.confirming {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 4px;
+  background: #ff4040;
+  border-color: #ff8080;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  animation: pulse-red 1s infinite;
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255, 64, 64, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 64, 64, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 64, 64, 0); }
+}
+
+.empty-msg {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  font-style: italic;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  #save-team-btn span {
+    display: none;
+  }
+  #save-team-btn {
+    padding: 10px;
+    margin-right: 5px;
+  }
+}
+
+.tab-disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  background: rgba(10, 20, 30, 0.4);
+  border: 1px solid rgba(200, 170, 110, 0.1);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.tab-disclaimer svg {
+  color: var(--accent-gold);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: rgba(20, 25, 35, 0.98);
+  border: 1px solid var(--accent-gold);
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(200, 170, 110, 0.1);
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.hidden .modal-content {
+  transform: translateY(20px);
+}
+
+.modal-content h3 {
+  color: var(--accent-gold);
+  margin-bottom: 0.8rem;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.modal-content p {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+.modal-content input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.modal-content input:focus {
+  border-color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 15px rgba(200, 170, 110, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.modal-btn.primary {
+  background: var(--accent-gold);
+  color: #000;
+  border: none;
+}
+
+.modal-btn.primary:hover {
+  background: #f0cc8a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(200, 170, 110, 0.4);
+}
+
+.modal-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+}
+
+.modal-btn.secondary:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
 }

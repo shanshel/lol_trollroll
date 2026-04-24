@@ -3,6 +3,7 @@ let championIdMap = {};
 let ddragonVersion = '14.8.1'; // Fallback
 let slots = [];
 let synergies = { preset: [], static: [] };
+let customSynergies = [];
 const container = document.getElementById('slots-container');
 const addCard = document.getElementById('add-card');
 
@@ -32,6 +33,12 @@ async function init() {
     championsList = champsData.champions;
     synergies = await synResponse.json();
     
+    // Load custom synergies from localStorage
+    const saved = localStorage.getItem('customSynergies');
+    if (saved) {
+      customSynergies = JSON.parse(saved);
+    }
+    
     setupEventListeners();
     
     // Initial slots (load from URL or default to 5)
@@ -58,6 +65,16 @@ async function init() {
 function setupEventListeners() {
   document.getElementById('randomize-btn').addEventListener('click', randomize);
   document.getElementById('reset-btn').addEventListener('click', resetAll);
+  document.getElementById('save-team-btn').addEventListener('click', () => {
+    document.getElementById('save-modal').classList.remove('hidden');
+    document.getElementById('team-name-input').value = `My Team ${new Date().toLocaleDateString()}`;
+    document.getElementById('team-name-input').focus();
+  });
+  document.getElementById('confirm-save-btn').addEventListener('click', confirmSave);
+  document.getElementById('cancel-save-btn').addEventListener('click', () => {
+    document.getElementById('save-modal').classList.add('hidden');
+  });
+  document.getElementById('share-team-btn').addEventListener('click', shareTeam);
   addCard.addEventListener('click', addSlot);
   
   // Synergy Sidebar
@@ -103,11 +120,13 @@ function setupEventListeners() {
 function renderSynergies() {
   const presetList = document.getElementById('preset-random-list');
   const staticList = document.getElementById('static-builds-list');
+  const customList = document.getElementById('custom-synergy-list');
   
-  if (!presetList || !staticList) return;
+  if (!presetList || !staticList || !customList) return;
   
   presetList.innerHTML = '';
   staticList.innerHTML = '';
+  customList.innerHTML = '';
   
   synergies.preset.forEach(syn => {
     const item = createSynergyItem(syn, 'preset');
@@ -118,9 +137,18 @@ function renderSynergies() {
     const item = createSynergyItem(syn, 'static');
     staticList.appendChild(item);
   });
+
+  if (customSynergies.length === 0) {
+    customList.innerHTML = '<p class="empty-msg">No custom teams saved yet.</p>';
+  } else {
+    customSynergies.forEach((syn, index) => {
+      const item = createSynergyItem(syn, 'custom', index);
+      customList.appendChild(item);
+    });
+  }
 }
 
-function createSynergyItem(syn, type) {
+function createSynergyItem(syn, type, index = null) {
   const div = document.createElement('div');
   div.className = `synergy-item ${type}-item`;
   
@@ -157,6 +185,18 @@ function createSynergyItem(syn, type) {
       ${iconsHtml}
     `;
   }
+
+  if (type === 'custom') {
+    const delBtn = document.createElement('button');
+    delBtn.className = 'delete-custom-btn';
+    delBtn.innerHTML = '&times;';
+    delBtn.title = 'Delete Team';
+    delBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      deleteCustomSynergy(index);
+    });
+    div.appendChild(delBtn);
+  }
   
   div.addEventListener('click', () => {
     applySynergy(syn);
@@ -166,6 +206,83 @@ function createSynergyItem(syn, type) {
     }
   });
   return div;
+}
+
+function saveTeam() {
+  // Now handled by modal triggers in setupEventListeners
+}
+
+function confirmSave() {
+  const input = document.getElementById('team-name-input');
+  const teamName = input.value.trim();
+  if (!teamName) return;
+
+  const newSynergy = {
+    name: teamName,
+    description: "Custom saved team",
+    slots: slots.map(s => ({
+      type: 'fixed',
+      name: s.name,
+      locked: s.locked
+    }))
+  };
+
+  customSynergies.push(newSynergy);
+  localStorage.setItem('customSynergies', JSON.stringify(customSynergies));
+  renderSynergies();
+  
+  // Close modal
+  document.getElementById('save-modal').classList.add('hidden');
+  
+  // Switch to custom tab
+  const customBtn = document.querySelector('[data-tab="custom"]');
+  if (customBtn) customBtn.click();
+}
+
+function deleteCustomSynergy(index) {
+  const customList = document.getElementById('custom-synergy-list');
+  const items = customList.querySelectorAll('.custom-item');
+  const targetItem = items[index];
+  const delBtn = targetItem.querySelector('.delete-custom-btn');
+  
+  if (delBtn.classList.contains('confirming')) {
+    // Second click: perform delete
+    customSynergies.splice(index, 1);
+    localStorage.setItem('customSynergies', JSON.stringify(customSynergies));
+    renderSynergies();
+  } else {
+    // First click: show confirmation state
+    delBtn.classList.add('confirming');
+    delBtn.innerHTML = 'SURE?';
+    delBtn.title = 'Click again to confirm delete';
+    
+    // Reset after 3 seconds if not clicked again
+    setTimeout(() => {
+      if (delBtn.parentNode) { // Check if still in DOM
+        delBtn.classList.remove('confirming');
+        delBtn.innerHTML = '&times;';
+        delBtn.title = 'Delete Team';
+      }
+    }, 3000);
+  }
+}
+
+async function shareTeam() {
+  const url = window.location.href;
+  try {
+    await navigator.clipboard.writeText(url);
+    const btn = document.getElementById('share-team-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'COPIED!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove('copied');
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy link:', err);
+    alert('Failed to copy link. You can copy it from the address bar!');
+  }
 }
 
 function applySynergy(syn) {
