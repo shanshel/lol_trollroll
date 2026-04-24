@@ -2,6 +2,7 @@ let championsList = [];
 let championIdMap = {};
 let ddragonVersion = '14.8.1'; // Fallback
 let slots = [];
+let synergies = { preset: [], static: [] };
 const container = document.getElementById('slots-container');
 const addCard = document.getElementById('add-card');
 
@@ -21,88 +22,36 @@ async function init() {
       championIdMap[champ.name] = champ.id;
     });
 
-    // 3. Load our local list (which includes 2026 champs)
-    const response = await fetch('./champions.json?v=' + Date.now());
-    const data = await response.json();
-    championsList = data.champions;
+    // 3. Load local data (champions and synergies)
+    const [champsResponse, synResponse] = await Promise.all([
+      fetch('./champions.json?v=' + Date.now()),
+      fetch('./synergies.json?v=' + Date.now())
+    ]);
     
-    addSlot();
+    const champsData = await champsResponse.json();
+    championsList = champsData.champions;
+    synergies = await synResponse.json();
+    
     setupEventListeners();
+    
+    // Initial slots
+    for (let i = 0; i < 5; i++) {
+      addSlot();
+    }
   } catch (error) {
-    console.error('Error loading champions:', error);
+    console.error('Failed to initialize:', error);
     // Fallback if APIs fail
-    const response = await fetch('./champions.json?v=' + Date.now());
-    const data = await response.json();
-    championsList = data.champions;
-    addSlot();
-    setupEventListeners();
+    try {
+      const champsResponse = await fetch('./champions.json');
+      const champsData = await champsResponse.json();
+      championsList = champsData.champions;
+      addSlot();
+      setupEventListeners();
+    } catch (e) {
+      console.error('Critical failure:', e);
+    }
   }
 }
-
-const synergies = {
-  preset: [
-    {
-      name: "Yassuo and His Brother",
-      description: "Yasuo and Yone locked. Others filtered for Yasuo's Mate.",
-      icon: "Yasuo",
-      slots: [
-        { type: 'fixed', name: 'Yasuo', locked: true },
-        { type: 'fixed', name: 'Yone', locked: true },
-        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false },
-        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false },
-        { type: 'random', role: 'All', feature: "Yasuo's Mate", locked: false }
-      ]
-    },
-    {
-      name: "The Hook City (Partial)",
-      description: "Thresh and Blitzcrank locked. Others filtered for Hooks.",
-      icon: "Thresh",
-      slots: [
-        { type: 'fixed', name: 'Thresh', locked: true },
-        { type: 'fixed', name: 'Blitzcrank', locked: true },
-        { type: 'random', role: 'All', feature: 'Hook', locked: false },
-        { type: 'random', role: 'All', feature: 'Hook', locked: false },
-        { type: 'random', role: 'All', feature: 'Hook', locked: false }
-      ]
-    },
-    {
-      name: "Invisible Threat",
-      description: "Evelynn and Twitch locked. Others filtered for Invisible.",
-      icon: "Evelynn",
-      slots: [
-        { type: 'fixed', name: 'Evelynn', locked: true },
-        { type: 'fixed', name: 'Twitch', locked: true },
-        { type: 'random', role: 'All', feature: 'Invisible', locked: false },
-        { type: 'random', role: 'All', feature: 'Invisible', locked: false },
-        { type: 'random', role: 'All', feature: 'Invisible', locked: false }
-      ]
-    }
-  ],
-  static: [
-    {
-      name: "The Hook Squad",
-      description: "Thresh, Blitz, Nautilus, Pyke, Leona.",
-      slots: [
-        { type: 'fixed', name: 'Thresh', locked: true },
-        { type: 'fixed', name: 'Blitzcrank', locked: true },
-        { type: 'fixed', name: 'Nautilus', locked: true },
-        { type: 'fixed', name: 'Pyke', locked: true },
-        { type: 'fixed', name: 'Leona', locked: true }
-      ]
-    },
-    {
-      name: "Global Presence",
-      description: "Shen, Galio, Twisted Fate, Nocturne, Pantheon.",
-      slots: [
-        { type: 'fixed', name: 'Shen', locked: true },
-        { type: 'fixed', name: 'Galio', locked: true },
-        { type: 'fixed', name: 'Twisted Fate', locked: true },
-        { type: 'fixed', name: 'Nocturne', locked: true },
-        { type: 'fixed', name: 'Pantheon', locked: true }
-      ]
-    }
-  ]
-};
 
 function setupEventListeners() {
   document.getElementById('randomize-btn').addEventListener('click', randomize);
@@ -114,13 +63,17 @@ function setupEventListeners() {
   const closeBtn = document.getElementById('close-sidebar-btn');
   const sidebar = document.getElementById('synergy-sidebar');
   
-  toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('closed');
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('closed');
+    });
+  }
   
-  closeBtn.addEventListener('click', () => {
-    sidebar.classList.add('closed');
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.add('closed');
+    });
+  }
 
   // Sidebar Tabs
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -136,7 +89,8 @@ function setupEventListeners() {
       document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
       });
-      document.getElementById(`${tabName}-tab`).classList.add('active');
+      const targetTab = document.getElementById(`${tabName}-tab`);
+      if (targetTab) targetTab.classList.add('active');
     });
   });
 

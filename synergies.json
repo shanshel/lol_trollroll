@@ -1,0 +1,1412 @@
+{
+  "preset": [
+    {
+      "name": "Yassuo and His Brother",
+      "description": "The classic 0/10 powerspike duo.",
+      "icon": "Yasuo",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Yasuo",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yone",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Spin-to-Win Casino",
+      "description": "Just keep spinning, eventually they'll die.",
+      "icon": "Garen",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Garen",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Short",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Short",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Short",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Short",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Is This a Hook?",
+      "description": "If it pulls, it's a hook. Hopefully.",
+      "icon": "Thresh",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Thresh",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Oops! All Shields",
+      "description": "Health bars? More like white bars.",
+      "icon": "Lulu",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Lulu",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Hide and Seek Champs",
+      "description": "You can't hit what you can't see.",
+      "icon": "Teemo",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Teemo",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Invisible",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Invisible",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Invisible",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Invisible",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Press R to Win",
+      "description": "Mechanical skill not included.",
+      "icon": "Amumu",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Amumu",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Fast & The Furious",
+      "description": "Gotta go fast. Like, really fast.",
+      "icon": "Hecarim",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Hecarim",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Global Warming",
+      "description": "Is it hot in here or is it just them?",
+      "icon": "Brand",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Brand",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Yeet the Child",
+      "description": "Knock-ups for everyone!",
+      "icon": "Alistar",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Alistar",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Yasuo's Mate",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Wait for 16",
+      "description": "Scaling into the next game.",
+      "icon": "Kayle",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Kayle",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Scaling",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Scaling",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Scaling",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Scaling",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Stun Lock Zoo",
+      "description": "Don't bother moving, you can't anyway.",
+      "icon": "Sejuani",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Sejuani",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Floor is Lava",
+      "description": "Step one: Burn. Step two: Profit.",
+      "icon": "Brand",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Brand",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Burn",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Can't Touch This",
+      "description": "Imagine having a real weapon.",
+      "icon": "Jax",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Jax",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Stun",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Hookers Union",
+      "description": "Local 404: Hooks not found (in lane).",
+      "icon": "Nautilus",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Nautilus",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Hook",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Zoomies Everywhere",
+      "description": "We have the Zoomies. You have a headache.",
+      "icon": "Yuumi",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Yuumi",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Heal",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Heal",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Shielding",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "One Shot, No Kill",
+      "description": "Art requires a certain... patience.",
+      "icon": "Jhin",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Jhin",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Root",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Root",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Root",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Root",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Freezer",
+      "description": "Cool down. Way down.",
+      "icon": "Anivia",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Anivia",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Slow",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Slow",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Slow",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Slow",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Poison Ivy",
+      "description": "It only hurts for... the rest of your life.",
+      "icon": "Cassiopeia",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Cassiopeia",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Poison",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Poison",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Poison",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Poison",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Bodyguards",
+      "description": "You hit them, you hit me. I hit you back.",
+      "icon": "Braum",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Braum",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Tank",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Tank",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Tank",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Tank",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "Teleportation Issues",
+      "description": "Where am I? Where are you? Where is the Nexus?",
+      "icon": "Ryze",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Ryze",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Global",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "name": "The Gold Digger",
+      "description": "Sharing is caring. Especially gold.",
+      "icon": "Pyke",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Pyke",
+          "locked": true
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Execute",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Execute",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Execute",
+          "locked": false
+        },
+        {
+          "type": "random",
+          "role": "All",
+          "feature": "Execute",
+          "locked": false
+        }
+      ]
+    }
+  ],
+  "static": [
+    {
+      "name": "The 0/10 Powerspike",
+      "description": "They can't stop us once we've died 50 times.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Yasuo",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yone",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Master Yi",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Vayne",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Zed",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Short Kings",
+      "description": "Tiny but terrifying.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Amumu",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Annie",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Fizz",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Gnar",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Poppy",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Tilt Machine",
+      "description": "Maximum annoyance guaranteed.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Teemo",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Shaco",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Blitzcrank",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Pyke",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Singed",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Blue Man Group",
+      "description": "Why are they so blue?",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Ryze",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Xerath",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Fizz",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Trundle",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Aurelion Sol",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Animal Kingdom",
+      "description": "Welcome to the jungle.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Rengar",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Warwick",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Volibear",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Nidalee",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Twitch",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "K-Pop Boy Band",
+      "description": "Coming to a stage (and lane) near you.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Ezreal",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Aphelios",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Kayn",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Sett",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yone",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Girl Bosses",
+      "description": "Running the rift one kill at a time.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Leona",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Diana",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Quinn",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Camille",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Samira",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Rock Band",
+      "description": "Hard rock at its finest.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Malphite",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Taliyah",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Skarner",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Taric",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Galio",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Demacia's Finest",
+      "description": "Honor! Justice! And zero braincells!",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Garen",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Lux",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Jarvan IV",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Quinn",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Xin Zhao",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Shadow Realm",
+      "description": "Where did everyone go?",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Mordekaiser",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Nocturne",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yorick",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Karthus",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Hecarim",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Invisible Threat",
+      "description": "You'll never see us coming. Literally.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Evelynn",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Twitch",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Shaco",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Kha'Zix",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Rengar",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Purple Rain",
+      "description": "Void stuff and bad vibes.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Lulu",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Kha'Zix",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Malzahar",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Kassadin",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Vel'Koz",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Beach Party Squad",
+      "description": "No shirts, no shoes, full service.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Leona",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Graves",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Lee Sin",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Renekton",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Taric",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Monster Mash",
+      "description": "They're big, they're mean, and they're mostly green.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Cho'Gath",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Malphite",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Skarner",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Tahm Kench",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Zac",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "E-Girl Streamer Team",
+      "description": "Don't forget to like and subscribe!",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Lux",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Seraphine",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Ahri",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yuumi",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Soraka",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Retirement Home",
+      "description": "Get off my lane!",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Zilean",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Corki",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Yorick",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Ryze",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Heimerdinger",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Fire Brigade",
+      "description": "Everything is fine. Definitely.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Brand",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Annie",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Shyvana",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Rumble",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Ornn",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Ice Age",
+      "description": "Is it cold in here or is it just the CC?",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Anivia",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Braum",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Lissandra",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Sejuani",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Ashe",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "Hook, Line, & Sinker",
+      "description": "Fishing for compliments (and enemies).",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Thresh",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Blitzcrank",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Nautilus",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Pyke",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Urgot",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Dragon Pit",
+      "description": "Imagine not having wings.",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Aurelion Sol",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Shyvana",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Smolder",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Jarvan IV",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Pantheon",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "name": "The Ninja Way",
+      "description": "Believe it!",
+      "slots": [
+        {
+          "type": "fixed",
+          "name": "Zed",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Shen",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Akali",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Kennen",
+          "locked": true
+        },
+        {
+          "type": "fixed",
+          "name": "Lee Sin",
+          "locked": true
+        }
+      ]
+    }
+  ]
+}
