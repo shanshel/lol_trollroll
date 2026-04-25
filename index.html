@@ -87,6 +87,22 @@
             </div>
         </div>
 
+        <!-- Champion Select Modal -->
+        <div id="champ-select-modal" class="modal-overlay hidden">
+            <div class="modal-content champ-select-content">
+                <header class="modal-header">
+                    <h3>SELECT CHAMPION</h3>
+                    <button id="close-champ-modal" class="close-btn">&times;</button>
+                </header>
+                <div class="search-container">
+                    <input type="text" id="champ-search" placeholder="Search champion..." autocomplete="off">
+                </div>
+                <div id="champ-grid" class="champ-grid">
+                    <!-- Champions will be injected here -->
+                </div>
+            </div>
+        </div>
+
         <!-- Synergy Sidebar -->
         <aside id="synergy-sidebar" class="sidebar">
             <header class="sidebar-header">

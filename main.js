@@ -6,6 +6,7 @@ let synergies = { preset: [], static: [] };
 let customSynergies = [];
 const container = document.getElementById('slots-container');
 const addCard = document.getElementById('add-card');
+let currentSelectingSlot = null;
 
 async function init() {
   try {
@@ -75,6 +76,22 @@ function setupEventListeners() {
     document.getElementById('save-modal').classList.add('hidden');
   });
   document.getElementById('share-team-btn').addEventListener('click', shareTeam);
+  
+  // Champ Select Modal
+  document.getElementById('close-champ-modal').addEventListener('click', () => {
+    document.getElementById('champ-select-modal').classList.add('hidden');
+    currentSelectingSlot = null;
+  });
+  document.getElementById('champ-search').addEventListener('input', (e) => {
+    renderChampGrid(e.target.value);
+  });
+  document.getElementById('champ-select-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'champ-select-modal') {
+      document.getElementById('champ-select-modal').classList.add('hidden');
+      currentSelectingSlot = null;
+    }
+  });
+  
   addCard.addEventListener('click', addSlot);
   
   // Synergy Sidebar
@@ -382,6 +399,7 @@ function createSlotElement() {
             <option value="Shielding">Shielding</option>
           </select>
         </div>
+        <button class="manual-select-btn">SELECT CHAMP</button>
     </div>
   `;
   return slotEl;
@@ -395,6 +413,67 @@ function setupSlotEvents(slot) {
   slot.el.querySelector('.remove-slot').addEventListener('click', (e) => {
     e.stopPropagation();
     removeSlot(slot);
+  });
+  slot.el.querySelector('.manual-select-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    openChampSelect(slot);
+  });
+}
+
+function openChampSelect(slot) {
+  currentSelectingSlot = slot;
+  document.getElementById('champ-select-modal').classList.remove('hidden');
+  document.getElementById('champ-search').value = '';
+  document.getElementById('champ-search').focus();
+  renderChampGrid();
+}
+
+function renderChampGrid(filter = '') {
+  const grid = document.getElementById('champ-grid');
+  grid.innerHTML = '';
+  
+  const search = filter.toLowerCase();
+  const filtered = championsList.filter(champ => {
+    const name = typeof champ === 'string' ? champ : champ.name;
+    return name.toLowerCase().includes(search);
+  });
+
+  filtered.forEach(champ => {
+    const name = typeof champ === 'string' ? champ : champ.name;
+    const champId = championIdMap[name];
+    
+    const div = document.createElement('div');
+    div.className = 'champ-item';
+    
+    let imgHtml = '';
+    if (champId) {
+      imgHtml = `<img src="https://ddragon.leagueoflegends.com/cdn/${ddragonVersion}/img/champion/${champId}.png" alt="${name}">`;
+    } else {
+      imgHtml = `<div class="icon-placeholder" style="width: 60px; height: 60px; margin-bottom: 0;"><span class="placeholder-char">${name.charAt(0)}</span></div>`;
+    }
+    
+    div.innerHTML = `
+      ${imgHtml}
+      <span>${name}</span>
+    `;
+    
+    div.addEventListener('click', () => {
+      if (currentSelectingSlot) {
+        currentSelectingSlot.name = name;
+        currentSelectingSlot.locked = true; // Auto-lock on manual selection
+        updateSlotUI(currentSelectingSlot, name);
+        
+        // Update lock UI
+        currentSelectingSlot.el.classList.add('locked');
+        currentSelectingSlot.el.querySelector('.lock-status').textContent = 'LOCKED';
+        
+        updateURL();
+        document.getElementById('champ-select-modal').classList.add('hidden');
+        currentSelectingSlot = null;
+      }
+    });
+    
+    grid.appendChild(div);
   });
 }
 
